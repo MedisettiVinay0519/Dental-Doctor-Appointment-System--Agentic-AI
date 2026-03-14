@@ -61,6 +61,7 @@ The system follows a Supervisor-Agent architecture.
    └───────────────┘
 ```
 ⚙️ Technology Stack
+```
 Component	Technology
 Agent Framework	LangGraph
 LLM	Groq (Llama 3.3 70B)
@@ -74,36 +75,27 @@ Validation	Pydantic
 📂 Project Structure
 ```
 Dental-Doctor-Appointment-System--Agentic-AI
-│
-├── main.py
-├── streamlit_app.py
-├── api.py
-├── doctor_availability.csv
-├── requirements.txt
-│
-├── dental_agent
-│
-│   ├── agent.py
-│
-│   ├── config
-│   │   └── settings.py
-│
-│   ├── models
-│   │   └── state.py
-│
-│   ├── tools
-│   │   ├── csv_reader.py
-│   │   └── csv_writer.py
-│
-│   ├── agents
-│   │   ├── supervisor.py
-│   │   ├── info_agent.py
-│   │   ├── booking_agent.py
-│   │   ├── cancellation_agent.py
-│   │   └── rescheduling_agent.py
-│
-│   └── workflows
-│       └── graph.py
+dental_agent_project/
+├── main.py                          # Entry point - interactive CLI
+├── doctor_availability.csv          # Data store for appointments
+├── requirements.txt                 # Python dependencies
+├── dental_agent/
+│   ├── agent.py                     # Main agent definition & tools
+│   ├── config/
+│   │   └── settings.py              # Configuration & environment
+│   ├── models/
+│   │   └── state.py                 # State schema definitions
+│   ├── tools/
+│   │   ├── csv_reader.py            # Read operations (query tools)
+│   │   └── csv_writer.py            # Write operations (mutation tools)
+│   ├── agents/
+│   │   ├── supervisor.py            # Intent classification & routing
+│   │   ├── info_agent.py            # Information queries
+│   │   ├── booking_agent.py         # Appointment booking
+│   │   ├── cancellation_agent.py    # Appointment cancellation
+│   │   └── rescheduling_agent.py    # Appointment rescheduling
+│   └── workflows/
+│       └── graph.py                 # LangGraph workflow definition
 ```
 🛠 Installation
 ```
