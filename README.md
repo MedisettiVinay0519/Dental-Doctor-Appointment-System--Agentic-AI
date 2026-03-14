@@ -97,6 +97,7 @@ dental_agent_project/
 │   └── workflows/
 │       └── graph.py                 # LangGraph workflow definition
 ```
+```
 🛠 Installation
 ```
 1️⃣ Clone the repository
